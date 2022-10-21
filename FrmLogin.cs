@@ -41,6 +41,9 @@ namespace boteco
             else
             {
                 MessageBox.Show("Suas credenciais não foram validadas!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtLogin.Text = "";
+                txtSenha.Text = "";
+                this.txtLogin.Focus();
             }
         }
     }
