@@ -86,7 +86,7 @@ namespace boteco
             this.dgvFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFuncionario.Location = new System.Drawing.Point(12, 297);
             this.dgvFuncionario.Name = "dgvFuncionario";
-            this.dgvFuncionario.Size = new System.Drawing.Size(943, 225);
+            this.dgvFuncionario.Size = new System.Drawing.Size(841, 225);
             this.dgvFuncionario.TabIndex = 2;
             this.dgvFuncionario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionario_CellClick);
             // 
@@ -367,7 +367,7 @@ namespace boteco
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(967, 534);
+            this.ClientSize = new System.Drawing.Size(865, 534);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnAtualizar);
@@ -400,11 +400,13 @@ namespace boteco
             this.Controls.Add(this.dgvFuncionario);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.txtId);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmFuncionario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Funcionários";
+            this.Load += new System.EventHandler(this.FrmFuncionario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -98,6 +98,7 @@ namespace boteco
             this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
             this.produtosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.produtosToolStripMenuItem.Text = "Produtos";
+            this.produtosToolStripMenuItem.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
             // 
             // funcionáriosToolStripMenuItem
             // 
@@ -111,6 +112,7 @@ namespace boteco
             this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
             this.vendasToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.vendasToolStripMenuItem.Text = "Vendas";
+            this.vendasToolStripMenuItem.Click += new System.EventHandler(this.vendasToolStripMenuItem_Click);
             // 
             // relatóriosToolStripMenuItem
             // 
@@ -155,6 +157,7 @@ namespace boteco
             this.pbxProdutos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxProdutos.TabIndex = 4;
             this.pbxProdutos.TabStop = false;
+            this.pbxProdutos.Click += new System.EventHandler(this.pbxProdutos_Click);
             // 
             // lblProdutos
             // 
@@ -196,6 +199,7 @@ namespace boteco
             this.pbxVenda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxVenda.TabIndex = 8;
             this.pbxVenda.TabStop = false;
+            this.pbxVenda.Click += new System.EventHandler(this.pbxVenda_Click);
             // 
             // lblVenda
             // 

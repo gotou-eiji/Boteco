@@ -60,5 +60,29 @@ namespace boteco
             FrmFuncionario funcionario = new FrmFuncionario();
             funcionario.Show();
         }
+
+        private void pbxProdutos_Click(object sender, EventArgs e)
+        {
+            FrmProduto produto = new FrmProduto();
+            produto.Show();
+        }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmProduto produto = new FrmProduto();
+            produto.Show();
+        }
+
+        private void pbxVenda_Click(object sender, EventArgs e)
+        {
+            FrmVenda venda = new FrmVenda();
+            venda.Show();
+        }
+
+        private void vendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVenda venda = new FrmVenda();
+            venda.Show();
+        }
     }
 }

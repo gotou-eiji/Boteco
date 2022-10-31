@@ -17,15 +17,6 @@ namespace boteco
             InitializeComponent();
         }
 
-        private void FrmFuncionario_Load(object sender, EventArgs e)
-        {
-            Funcionario funcionario = new Funcionario();
-            List<Funcionario> funcionarios = funcionario.listafuncionario();
-            dgvFuncionario.DataSource = funcionarios;
-            btnAtualizar.Enabled = false;
-            btnExcluir.Enabled = false;
-        }
-
         private void btnLocalizar_Click(object sender, EventArgs e)
         {
             if (txtId.Text == "")
@@ -41,8 +32,8 @@ namespace boteco
                 txtNome.Text = funcionario.nome;
                 txtCelular.Text = funcionario.celular;
                 txtEndereco.Text = funcionario.endereco;
-                txtComplemento.Text = funcionario.celular;
-                txtCidade.Text = funcionario.data_nascimento;
+                txtComplemento.Text = funcionario.complemento;
+                txtCidade.Text = funcionario.cidade;
                 txtCep.Text = funcionario.cep;
                 txtCpf.Text = funcionario.cpf;
                 txtContaCorrente.Text = funcionario.cc;
@@ -89,12 +80,12 @@ namespace boteco
                     else
                     {
                         funcionario.Inserir(txtNome.Text, txtCelular.Text, txtEndereco.Text, txtComplemento.Text, txtCidade.Text, txtCep.Text, txtCpf.Text, txtContaCorrente.Text, txtPix.Text, txtGenero.Text, txtDataNascimento.Text, txtFuncao.Text);
-                        MessageBox.Show("Cliente cadastrado com sucesso!");
+                        MessageBox.Show("Funcionário cadastrado com sucesso!");
                         List<Funcionario> funcionarios = funcionario.listafuncionario();
                         dgvFuncionario.DataSource = funcionarios;
                         txtNome.Text = "";
                         txtCelular.Text = "";
-                        txtCelular.Text = "";
+                        txtEndereco.Text = "";
                         txtComplemento.Text = "";
                         txtCidade.Text = "";
                         txtCep.Text = "";
@@ -155,7 +146,7 @@ namespace boteco
                 int Id = Convert.ToInt32(txtId.Text.Trim());
                 Funcionario funcionario = new Funcionario();
                 funcionario.Excluir(Id);
-                MessageBox.Show("Cliente excluído com sucesso!");
+                MessageBox.Show("Funcionário excluído com sucesso!");
                 List<Funcionario> pessoas = funcionario.listafuncionario();
                 dgvFuncionario.DataSource = pessoas;
                 txtId.Text = "";
@@ -213,6 +204,15 @@ namespace boteco
             {
                 Application.Exit();
             }
+        }
+
+        private void FrmFuncionario_Load(object sender, EventArgs e)
+        {
+            Funcionario funcionario = new Funcionario();
+            List<Funcionario> funcionarios = funcionario.listafuncionario();
+            dgvFuncionario.DataSource = funcionarios;
+            btnAtualizar.Enabled = false;
+            btnExcluir.Enabled = false;
         }
     }
 }

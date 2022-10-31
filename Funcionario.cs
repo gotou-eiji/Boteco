@@ -106,7 +106,7 @@ namespace boteco
             con.Close();
         }
 
-        public bool RegistroRepetido(string nome, string celular, string email)
+        public bool RegistroRepetido(string nome, string cpf, string celular)
         {
             string sql = "SELECT * FROM Funcionario WHERE nome='" + nome + "' AND cpf='" + cpf + "' AND celular='" + celular + "'";
             con.Open();
