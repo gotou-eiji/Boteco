@@ -80,7 +80,8 @@ namespace BotecoTDS08
             this.btnNovoPedido.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnNovoPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNovoPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovoPedido.Location = new System.Drawing.Point(599, 65);
+            this.btnNovoPedido.ForeColor = System.Drawing.Color.LawnGreen;
+            this.btnNovoPedido.Location = new System.Drawing.Point(599, 71);
             this.btnNovoPedido.Name = "btnNovoPedido";
             this.btnNovoPedido.Size = new System.Drawing.Size(135, 36);
             this.btnNovoPedido.TabIndex = 2;
@@ -94,6 +95,7 @@ namespace BotecoTDS08
             this.dgvPedido.Name = "dgvPedido";
             this.dgvPedido.Size = new System.Drawing.Size(580, 150);
             this.dgvPedido.TabIndex = 3;
+            this.dgvPedido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedido_CellClick);
             // 
             // label2
             // 
@@ -138,6 +140,7 @@ namespace BotecoTDS08
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(140, 20);
             this.txtQuantidade.TabIndex = 11;
+            this.txtQuantidade.Leave += new System.EventHandler(this.txtQuantidade_Leave);
             // 
             // label5
             // 
@@ -213,19 +216,22 @@ namespace BotecoTDS08
             // 
             // btnAtualizarPedido
             // 
+            this.btnAtualizarPedido.BackColor = System.Drawing.Color.White;
             this.btnAtualizarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtualizarPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizarPedido.Location = new System.Drawing.Point(599, 118);
+            this.btnAtualizarPedido.ForeColor = System.Drawing.Color.Orange;
+            this.btnAtualizarPedido.Location = new System.Drawing.Point(599, 116);
             this.btnAtualizarPedido.Name = "btnAtualizarPedido";
             this.btnAtualizarPedido.Size = new System.Drawing.Size(135, 38);
             this.btnAtualizarPedido.TabIndex = 20;
             this.btnAtualizarPedido.Text = "Atualizar Pedido";
-            this.btnAtualizarPedido.UseVisualStyleBackColor = true;
+            this.btnAtualizarPedido.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.DimGray;
             this.button3.Location = new System.Drawing.Point(127, 14);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(203, 36);
@@ -237,6 +243,7 @@ namespace BotecoTDS08
             // 
             this.btnNovoItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNovoItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovoItem.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.btnNovoItem.Location = new System.Drawing.Point(296, 181);
             this.btnNovoItem.Name = "btnNovoItem";
             this.btnNovoItem.Size = new System.Drawing.Size(140, 37);
@@ -246,44 +253,52 @@ namespace BotecoTDS08
             // 
             // btnEditarItem
             // 
+            this.btnEditarItem.BackColor = System.Drawing.Color.White;
             this.btnEditarItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarItem.ForeColor = System.Drawing.Color.DarkOrange;
             this.btnEditarItem.Location = new System.Drawing.Point(296, 225);
             this.btnEditarItem.Name = "btnEditarItem";
             this.btnEditarItem.Size = new System.Drawing.Size(140, 36);
             this.btnEditarItem.TabIndex = 23;
             this.btnEditarItem.Text = "Editar Item";
-            this.btnEditarItem.UseVisualStyleBackColor = true;
+            this.btnEditarItem.UseVisualStyleBackColor = false;
+            this.btnEditarItem.Click += new System.EventHandler(this.btnEditarItem_Click);
             // 
             // btnExcluirItem
             // 
             this.btnExcluirItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluirItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluirItem.ForeColor = System.Drawing.Color.Red;
             this.btnExcluirItem.Location = new System.Drawing.Point(296, 267);
             this.btnExcluirItem.Name = "btnExcluirItem";
             this.btnExcluirItem.Size = new System.Drawing.Size(140, 37);
             this.btnExcluirItem.TabIndex = 24;
             this.btnExcluirItem.Text = "Excluir Item";
             this.btnExcluirItem.UseVisualStyleBackColor = true;
+            this.btnExcluirItem.Click += new System.EventHandler(this.btnExcluirItem_Click);
             // 
             // btnFechar
             // 
+            this.btnFechar.BackColor = System.Drawing.Color.Red;
             this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFechar.Location = new System.Drawing.Point(626, 444);
+            this.btnFechar.ForeColor = System.Drawing.Color.White;
+            this.btnFechar.Location = new System.Drawing.Point(599, 434);
             this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(125, 36);
+            this.btnFechar.Size = new System.Drawing.Size(135, 36);
             this.btnFechar.TabIndex = 25;
             this.btnFechar.Text = "Fechar";
-            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.UseVisualStyleBackColor = false;
             // 
             // btnFinalizarVenda
             // 
             this.btnFinalizarVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFinalizarVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizarVenda.Location = new System.Drawing.Point(626, 398);
+            this.btnFinalizarVenda.ForeColor = System.Drawing.Color.Blue;
+            this.btnFinalizarVenda.Location = new System.Drawing.Point(599, 388);
             this.btnFinalizarVenda.Name = "btnFinalizarVenda";
-            this.btnFinalizarVenda.Size = new System.Drawing.Size(125, 36);
+            this.btnFinalizarVenda.Size = new System.Drawing.Size(135, 36);
             this.btnFinalizarVenda.TabIndex = 26;
             this.btnFinalizarVenda.Text = "Finalizar Venda";
             this.btnFinalizarVenda.UseVisualStyleBackColor = true;
@@ -292,12 +307,14 @@ namespace BotecoTDS08
             // 
             this.btnFinalizarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFinalizarPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizarPedido.Location = new System.Drawing.Point(626, 352);
+            this.btnFinalizarPedido.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnFinalizarPedido.Location = new System.Drawing.Point(599, 342);
             this.btnFinalizarPedido.Name = "btnFinalizarPedido";
-            this.btnFinalizarPedido.Size = new System.Drawing.Size(125, 36);
+            this.btnFinalizarPedido.Size = new System.Drawing.Size(135, 36);
             this.btnFinalizarPedido.TabIndex = 27;
             this.btnFinalizarPedido.Text = "Finalizar Pedido";
             this.btnFinalizarPedido.UseVisualStyleBackColor = true;
+            this.btnFinalizarPedido.Click += new System.EventHandler(this.btnFinalizarPedido_Click);
             // 
             // lblEstoque
             // 
@@ -344,7 +361,7 @@ namespace BotecoTDS08
             this.MinimizeBox = false;
             this.Name = "FrmVenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "z";
+            this.Text = "Venda";
             this.Load += new System.EventHandler(this.FrmVenda_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
             this.ResumeLayout(false);
