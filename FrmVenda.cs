@@ -228,7 +228,18 @@ namespace BotecoTDS08
 
         private void btnFinalizarPedido_Click(object sender, EventArgs e)
         {
-
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+            con.Open();
+            SqlCommand cmd = new SqlCommand("InserirVenda", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Id_pessoa", SqlDbType.NChar).Value = cbxCliente.SelectedValue;
+            cmd.Parameters.AddWithValue("@total", SqlDbType.Decimal).Value = Convert.ToDecimal(txtTotal.Text);
+            cmd.Parameters.AddWithValue("@data_venda", SqlDbType.Date).Value = DateTime.Now;
+            cmd.Parameters.AddWithValue("@situacao", SqlDbType.NChar).Value = "Aberta";
+            cmd.ExecuteNonQuery();
         }
     }
 }
