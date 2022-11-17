@@ -87,6 +87,7 @@ namespace BotecoTDS08
             this.btnNovoPedido.TabIndex = 2;
             this.btnNovoPedido.Text = "Novo Pedido";
             this.btnNovoPedido.UseVisualStyleBackColor = true;
+            this.btnNovoPedido.Click += new System.EventHandler(this.btnNovoPedido_Click_1);
             // 
             // dgvPedido
             // 
@@ -238,6 +239,7 @@ namespace BotecoTDS08
             this.button3.TabIndex = 21;
             this.button3.Text = "Localizar Pedido/Venda";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnNovoItem
             // 
