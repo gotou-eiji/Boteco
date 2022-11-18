@@ -227,6 +227,7 @@ namespace BotecoTDS08
             this.btnAtualizarPedido.TabIndex = 20;
             this.btnAtualizarPedido.Text = "Atualizar Pedido";
             this.btnAtualizarPedido.UseVisualStyleBackColor = false;
+            this.btnAtualizarPedido.Click += new System.EventHandler(this.btnAtualizarPedido_Click);
             // 
             // button3
             // 
@@ -252,6 +253,7 @@ namespace BotecoTDS08
             this.btnNovoItem.TabIndex = 22;
             this.btnNovoItem.Text = "Novo Item";
             this.btnNovoItem.UseVisualStyleBackColor = true;
+            this.btnNovoItem.Click += new System.EventHandler(this.btnNovoItem_Click_1);
             // 
             // btnEditarItem
             // 
@@ -292,6 +294,7 @@ namespace BotecoTDS08
             this.btnFechar.TabIndex = 25;
             this.btnFechar.Text = "Fechar";
             this.btnFechar.UseVisualStyleBackColor = false;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click_1);
             // 
             // btnFinalizarVenda
             // 
@@ -304,6 +307,7 @@ namespace BotecoTDS08
             this.btnFinalizarVenda.TabIndex = 26;
             this.btnFinalizarVenda.Text = "Finalizar Venda";
             this.btnFinalizarVenda.UseVisualStyleBackColor = true;
+            this.btnFinalizarVenda.Click += new System.EventHandler(this.btnFinalizarVenda_Click);
             // 
             // btnFinalizarPedido
             // 
